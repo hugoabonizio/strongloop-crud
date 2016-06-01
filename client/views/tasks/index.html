@@ -2,6 +2,7 @@
   <li>
     <input type="checkbox" ng-check="task.done" ng-model="task.done" ng-change="update(task)">
     {{ task.description }}
+    <a ng-click="destroy(task)" style="color: red; cursor: pointer;">X</a>
   </li>
 </ul>
 <a ui-sref="add-task">New task</a>
