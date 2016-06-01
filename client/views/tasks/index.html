@@ -1,0 +1,7 @@
+<ul ng-repeat="task in tasks">
+  <li>
+    <input type="checkbox" ng-check="task.done" ng-model="task.done" ng-change="update(task)">
+    {{ task.description }}
+  </li>
+</ul>
+<a ui-sref="add-task">New task</a>
