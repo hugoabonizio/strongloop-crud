@@ -26,11 +26,8 @@ angular
       }, {
         description: $scope.task.description,
         done: false
+      }, function () {
+        $state.go('all-tasks')
       })
-      Task
-        .create($scope.task)
-        .$promise.then(function () {
-          $state.go('all-tasks')
-        })
     }
   }])
