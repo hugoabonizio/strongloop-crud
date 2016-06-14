@@ -1,7 +1,7 @@
 angular
   .module('app')
-  .controller('AllTasksController', ['$scope', '$state', 'Task', function ($scope, $state, Task) {
-    $scope.tasks = Task.find()
+  .controller('AllTasksController', ['$scope', '$state', 'Task', 'User', function ($scope, $state, Task, User) {
+    $scope.tasks = User.tasks({ id: User.getCurrentId() })
 
     $scope.update = function (task) {
       task.$save()

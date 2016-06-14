@@ -1,11 +1,18 @@
 {
   "ids": {
-    "task": 8
+    "task": 2,
+    "user": 2,
+    "AccessToken": 2
   },
   "models": {
     "task": {
-      "4": "{\"description\":\"222\",\"id\":4}",
-      "7": "{\"description\":\"fdssdf\",\"id\":7}"
+      "1": "{\"description\":\"aaaaaaaaaaa\",\"done\":true,\"userId\":1,\"id\":1}"
+    },
+    "user": {
+      "1": "{\"password\":\"$2a$10$1gjln.2Tun3N21nceqf7W.ZC95KoMig.yuDXJ6ZrIZpSnkyBToGwS\",\"email\":\"hugo@email.com\",\"id\":1}"
+    },
+    "AccessToken": {
+      "M9J19KQkC0S5IAigN3nqLH24Gzwkh7FETNA030WvElOhSCfyEtXM2hEIwCsYQnlE": "{\"id\":\"M9J19KQkC0S5IAigN3nqLH24Gzwkh7FETNA030WvElOhSCfyEtXM2hEIwCsYQnlE\",\"ttl\":1209600,\"created\":\"2016-06-14T17:58:53.816Z\",\"userId\":1}"
     }
   }
 }
