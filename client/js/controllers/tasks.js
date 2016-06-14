@@ -17,10 +17,16 @@ angular
     }
   }])
 
-  .controller('AddTaskController', ['$scope', '$state', 'Task', function ($scope, $state, Task) {
+  .controller('AddTaskController', ['$scope', '$state', 'Task', 'User', function ($scope, $state, Task, User) {
     $scope.task = {}
 
     $scope.save = function () {
+      User.tasks.create({
+        id: User.getCurrentId()
+      }, {
+        description: $scope.task.description,
+        done: false
+      })
       Task
         .create($scope.task)
         .$promise.then(function () {
