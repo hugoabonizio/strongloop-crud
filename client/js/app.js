@@ -11,6 +11,23 @@ angular
       .state('add-task', {
         url: '/tasks/new',
         templateUrl: 'views/tasks/new.html',
-        controller: 'AddTaskController'
+        controller: 'AddTaskController',
+        resolve: {
+          access: ['User', function (User) { return User.isAuthenticated() }]
+        }
       })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'views/login.html',
+        controller: 'LoginController'
+      })
+  }])
+  .run(['$rootScope', '$state', 'User', function ($rootScope, $state, User) {
+    $rootScope.$on('$stateChangeStart', function (event, toState) {
+      if (!User.isAuthenticated() && toState.name != 'login') {
+        event.preventDefault()
+        $state.go('login')
+      }
+      // console.log(User.isAuthenticated(), toState)
+    })
   }])
