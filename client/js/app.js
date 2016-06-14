@@ -1,7 +1,7 @@
 angular
   .module('app', ['ui.router', 'lbServices'])
   .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('all-tasks');
+    $urlRouterProvider.otherwise('/tasks')
     $stateProvider
       .state('all-tasks', {
         url: '/tasks',

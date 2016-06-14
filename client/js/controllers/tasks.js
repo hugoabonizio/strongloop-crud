@@ -18,7 +18,7 @@ angular
   }])
 
   .controller('AddTaskController', ['$scope', '$state', 'Task', function ($scope, $state, Task) {
-    $scope.task = {};
+    $scope.task = {}
 
     $scope.save = function () {
       Task
