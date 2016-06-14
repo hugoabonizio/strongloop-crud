@@ -3,7 +3,13 @@
     <title>Todo App</title>
   </head>
   <body>
-    <h1>Todos</h1>
+    <h1>
+      <a ui-sref="all-tasks">Todos</a>
+    </h1>
+    <span ng-show="userAuthenticated">
+      <a ui-sref="logout">Logout</a>
+    </span>
+    <hr>
 
     <main ui-view></main>
 

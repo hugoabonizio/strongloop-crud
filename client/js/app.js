@@ -21,6 +21,10 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginController'
       })
+      .state('logout', {
+        url: '/logout',
+        controller: 'LogoutController'
+      })
   }])
   .run(['$rootScope', '$state', 'User', function ($rootScope, $state, User) {
     $rootScope.$on('$stateChangeStart', function (event, toState) {
@@ -30,4 +34,6 @@ angular
       }
       // console.log(User.isAuthenticated(), toState)
     })
+
+    $rootScope.userAuthenticated = User.isAuthenticated()
   }])

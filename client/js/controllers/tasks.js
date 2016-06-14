@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .controller('AllTasksController', ['$scope', '$state', 'Task', 'User', function ($scope, $state, Task, User) {
+  .controller('AllTasksController', function ($rootScope, $scope, $state, Task, User) {
     $scope.tasks = User.tasks({ id: User.getCurrentId() })
 
     $scope.update = function (task) {
@@ -15,9 +15,9 @@ angular
           $scope.tasks.splice(index, 1)
         })
     }
-  }])
+  })
 
-  .controller('AddTaskController', ['$scope', '$state', 'Task', 'User', function ($scope, $state, Task, User) {
+  .controller('AddTaskController', function ($scope, $state, Task, User) {
     $scope.task = {}
 
     $scope.save = function () {
@@ -30,4 +30,4 @@ angular
         $state.go('all-tasks')
       })
     }
-  }])
+  })
